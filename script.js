@@ -148,6 +148,61 @@ function checkCompletion() {
         message.textContent = 'Great job! You completed the sentence!';
         showConfetti();
     }
+    function showConfetti() {
+        const canvas = document.getElementById('confetti-canvas');
+        const context = canvas.getContext('2d');
+    
+        // Resize the canvas to fit the screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    
+        const confettiColors = ['#4caf50', '#ffeb3b', '#2196f3', '#f44336'];
+        const particles = [];
+    
+        // Create 100 particles
+        for (let i = 0; i < 100; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+                radius: Math.random() * 6 + 2,
+                velocityX: Math.random() * 2 - 1,
+                velocityY: Math.random() * 3 + 1,
+            });
+        }
+    
+        function render() {
+            // Clear the canvas
+            context.clearRect(0, 0, canvas.width, canvas.height);
+    
+            particles.forEach((particle, index) => {
+                // Update particle position
+                particle.x += particle.velocityX;
+                particle.y += particle.velocityY;
+    
+                // Remove particle if it goes out of bounds
+                if (particle.y > canvas.height) {
+                    particles.splice(index, 1);
+                }
+    
+                // Draw the particle
+                context.beginPath();
+                context.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
+                context.fillStyle = particle.color;
+                context.fill();
+            });
+    
+            // Continue rendering while particles exist
+            if (particles.length > 0) {
+                requestAnimationFrame(render);
+            } else {
+                canvas.style.display = 'none'; // Hide canvas when done
+            }
+        }
+    
+        canvas.style.display = 'block'; // Ensure canvas is visible
+        render();
+    }
 }
 
 //End of confetti logic
