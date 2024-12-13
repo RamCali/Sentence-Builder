@@ -60,3 +60,18 @@ body {
     z-index: 1000;
 }
 /* End of confetti logic */
+
+#next-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#next-button:hover {
+    background-color: #45a049;
+}

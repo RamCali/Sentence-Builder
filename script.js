@@ -206,3 +206,6 @@ function checkCompletion() {
 }
 
 //End of confetti logic
+
+let currentActivityIndex = 0;
+let activities = []; // This will store the activities from `data.json`
