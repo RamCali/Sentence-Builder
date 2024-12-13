@@ -88,3 +88,66 @@ function checkCompletion() {
 
 // Load the game
 loadGame();
+
+// Start of confetti logic
+function showConfetti() {
+    const canvas = document.getElementById('confetti-canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confettiColors = ['#4caf50', '#ffeb3b', '#2196f3', '#f44336'];
+    const particles = [];
+
+    for (let i = 0; i < 100; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+            radius: Math.random() * 6 + 2,
+            velocityX: Math.random() * 2 - 1,
+            velocityY: Math.random() * 3 + 1,
+        });
+    }
+
+    function render() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((particle, index) => {
+            particle.x += particle.velocityX;
+            particle.y += particle.velocityY;
+
+            if (particle.y > canvas.height) {
+                particles.splice(index, 1);
+            }
+
+            context.beginPath();
+            context.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
+            context.fillStyle = particle.color;
+            context.fill();
+        });
+
+        if (particles.length > 0) {
+            requestAnimationFrame(render);
+        } else {
+            canvas.style.display = 'none';
+        }
+    }
+
+    canvas.style.display = 'block';
+    render();
+}
+
+// Trigger the custom confetti in `checkCompletion`
+function checkCompletion() {
+    const placeholders = document.querySelectorAll('.placeholder');
+    const completed = Array.from(placeholders).every(placeholder => placeholder.textContent.trim() !== '');
+    const message = document.getElementById('message');
+
+    if (completed) {
+        message.textContent = 'Great job! You completed the sentence!';
+        showConfetti();
+    }
+}
+
+//End of confetti logic
