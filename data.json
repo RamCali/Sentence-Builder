@@ -1,0 +1,14 @@
+[
+    {
+      "image": "example-dog-house.png",
+      "sentence": ["The", "dog", "is", "sleeping", "under", "the", "house."],
+      "placeholders": [1, 3],
+      "words": ["dog", "sleeping"]
+    },
+    {
+      "image": "example-cat-tree.png",
+      "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+      "placeholders": [1, 3],
+      "words": ["cat", "sitting"]
+    }
+  ]
