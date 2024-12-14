@@ -290,3 +290,5 @@ document.getElementById('next-button').addEventListener('click', () => {
 });
 
 document.getElementById('progress').textContent = `Activity ${index + 1} of ${activities.length}`;
+
+document.getElementById('progress').textContent = `Activity ${index + 1} of ${activities.length}`;

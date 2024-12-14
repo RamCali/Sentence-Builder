@@ -75,3 +75,36 @@ body {
 #next-button:hover {
     background-color: #45a049;
 }
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+.sentence {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+.words {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#message {
+    margin: 10px 0;
+    font-weight: bold;
+    color: green;
+}
+#next-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
