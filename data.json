@@ -1,15 +1,38 @@
 [
-    {
-      "image": "example-dog-house.png",
-      "sentence": ["The", "dog", "is", "sleeping", "under", "the", "bed."],
-      "placeholders": [1, 3],
-      "words": ["dog", "sleeping"]
-    },
-    {
-      "image": "example-cat-tree.png",
-      "sentence": ["The", "cat", "is", "sitting", "under", "the", "tree."],
-      "placeholders": [1, 3],
-      "words": ["cat", "sitting"]
-    }
-  ]
-  
+  {
+    "image": "example-dog-house.png",
+    "sentence": ["The", "dog", "is", "sleeping", "under", "the", "bed."],
+    "words": ["dog", "sleeping"]
+  },
+  {
+    "image": "boy-is-petting-a-cat.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  }
+  ,
+  {
+    "image": "cat-is-playing-with-a-pencil.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  },
+  {
+    "image": "cat-is-sitting-in-the-box.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  },
+  {
+    "image": "cat-is-sitting-up-on-the-shelf.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  },
+  {
+    "image": "cat-is-walking-under-the-table.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  },
+  {
+    "image": "lady-is-holding-a-cat.jpg",
+    "sentence": ["The", "cat", "is", "sitting", "on", "the", "tree."],
+    "words": ["cat", "sitting"]
+  }
+]
