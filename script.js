@@ -288,3 +288,5 @@ document.getElementById('next-button').addEventListener('click', () => {
       document.getElementById('next-button').style.display = 'none';
   }
 });
+
+document.getElementById('progress').textContent = `Activity ${index + 1} of ${activities.length}`;
